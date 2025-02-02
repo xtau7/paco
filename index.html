@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Virtual</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="musica-fondo" src="somg_1.mp3" loop></audio> <!-- Asegúrate de que el archivo de música esté en la misma carpeta -->
+    <div class="sobre-container" onclick="mostrarCarta()">
+        <div id="sobre">
+            <div class="tapa"></div>
+            <div class="base"></div>
+        </div>
+        <div id="carta" class="pagina">
+            <div class="mensaje" id="pagina-1">
+                <h1>Querida <span id="nombre-novia"> emily m minion </h1>
+                <p>Hola, quiero que sepas que cada dia que pasa, m corazon late con mas fuerza al pensar en ti. Cada momento que paso contigo es un tesoro, y no puedo imaginar mi vida sin ti a mi lado.
+                <p>Con todo mi amor.
+                <p>Josue tu alpha
+            </div>
+            <div class="mensaje" id="pagina-2"> <!-- Parte de la foto eliminada -->
+                <p>Aunq la distancia nos separa fisicamente por el momento, nada puede alejarte de mis pensamientos. Por las noches, miro al techo de mi habitacion mientras pienso en ti, y me gusta imaginar que tu tambien lo haces, eso me hace sentir mas cerca de ti.
+                </p>
+            </div>
+            <div class="mensaje" id="pagina-3">
+                <p>Cada momento contigo es mágico, y me haces sentir como la persona más afortunada del mundo. Gracias por ser tú, por ser mi compañera, mi amiga y mi amor.</p>
+            </div>
+            <div class="mensaje" id="pagina-final">
+                <h1>Gracias por leer, mi amor.</h1>
+                <p>Espero que esta carta te haya hecho sonreír tanto como me haces sonreír tú cada día.</p>
+                <img src="pac.jpg" alt="Foto juntos 1" class="foto"> <!-- Agregar foto 1 -->
+            </div>
+            <button onclick="anteriorPagina()" class="boton-navegacion">Anterior</button>
+            <button onclick="siguientePagina()" class="boton-navegacion">Siguiente</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

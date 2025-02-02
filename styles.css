@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://images.pexels.com/photos/12728135/pexels-photo-12728135.jpeg'); /* Imagen de fondo de rosas */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Evitar desplazamiento de la página */
+}
+
+.sobre-container {
+    position: relative;
+    width: 500px; /* Aumentar el tamaño del contenedor */
+    height: 300px; /* Aumentar el tamaño del contenedor */
+    cursor: pointer;
+}
+
+#sobre {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ff69b4;
+    clip-path: polygon(50% 0%, 100% 33%, 100% 100%, 0% 100%, 0% 33%);
+    transition: transform 0.5s ease-in-out;
+    display: block; /* Asegurar que el sobre esté visible */
+}
+
+#sobre .tapa {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: #ff69b4;
+    top: 0;
+    z-index: 2;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out;
+}
+
+#sobre .base {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ff69b4;
+    bottom: 0;
+}
+
+#carta {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-in-out;
+    text-align: center;
+    padding: 30px; /* Aumentar el padding */
+    animation: fadeIn 0.5s ease-in-out;
+    background-image: url('marca_de_agua.png'); /* Marca de agua */
+    background-size: 200px; /* Tamaño de la marca de agua */
+    background-position: center center; /* Posición de la marca de agua */
+    background-repeat: no-repeat; /* No repetir la marca de agua */
+    opacity: 0.9; /* Transparencia de la marca de agua */
+}
+
+.mensaje {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.mensaje.mostrar {
+    display: block !important; /* Asegurar que se muestre con !important */
+    opacity: 1;
+}
+
+.mensaje h1 {
+    font-size: 2em; /* Aumentar el tamaño de la fuente */
+    color: #ff69b4;
+}
+
+.mensaje p {
+    font-size: 1.2em; /* Aumentar el tamaño de la fuente */
+    color: #333333;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.foto {
+    width: 100%;
+    max-width: 200px; /* Ajustar el ancho máximo */
+    height: auto;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.boton-navegacion {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff69b4;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.boton-navegacion:hover {
+    background-color: #ff4771;
+}
+
+#particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particula {
+    position: absolute;
+    font-size: 2rem;
+    animation: subir 5s linear infinite;
+}
+
+@keyframes subir {
+    0% { bottom: -2rem; opacity: 1; }
+    100% { bottom: 100%; opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+.confeti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff69b4;
+    animation: caer 3s linear infinite;
+}
+
+@keyframes caer {
+    from { top: -10px; }
+    to { top: 100vh; }
+}
+
+/* Consultas de medios para dispositivos móviles */
+@media (max-width: 600px) {
+    .sobre-container {
+        width: 90%; /* Ajustar el ancho del contenedor */
+        height: auto; /* Ajustar la altura del contenedor */
+    }
+
+    #carta {
+        width: 95%;
+        height: auto; /* Ajustar la altura automática */
+        padding: 20px; /* Reducir el padding */
+        background-size: 150px; /* Tamaño de la marca de agua */
+    }
+
+    .mensaje h1 {
+        font-size: 1.5em; /* Ajustar el tamaño de la fuente */
+    }
+
+    .mensaje p {
+        font-size: 1em; /* Ajustar el tamaño de la fuente */
+    }
+
+    .foto {
+        max-width: 150px; /* Ajustar el ancho máximo */
+        margin: 5px 0; /* Ajustar el margen */
+    }
+
+    .boton-navegacion {
+        font-size: 0.9em; /* Ajustar el tamaño de la fuente */
+        padding: 8px 15px; /* Ajustar el padding */
+    }
+}
